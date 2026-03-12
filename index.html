@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implant Restoration - Dr. Juan Carlos Vivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a1e42;
+      --dark-navy: #050d1a;
+      --red: #d82e2e;
+      --light-gray: #f5f5f5;
+      --gray: #666;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--dark-navy) 100%);
+      color: var(--white);
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
+      background-size: 200px;
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      background: var(--navy);
+      padding: 8px 20px;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--red);
+    }
+
+    .hero-title {
+      margin-bottom: 10px;
+    }
+
+    .title-main {
+      display: block;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 0.9;
+    }
+
+    .hero-version {
+      color: var(--red);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .hero-subtitle h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .text-red {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-bottom: 50px;
+      border-left: 3px solid var(--red);
+      padding-left: 20px;
+      opacity: 0.9;
+    }
+
+    .hero-instructor {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 40px;
+      align-items: end;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .instructor-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--red);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .instructor-info h3 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .instructor-role {
+      font-size: 1.3rem;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .instructor-bio {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .hero-date {
+      background: var(--white);
+      color: var(--navy);
+      padding: 20px 40px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .hero-date p {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .hero-contact {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Sections */
+    .section {
+      padding: 80px 20px;
+    }
+
+    .section-light {
+      background: var(--light-gray);
+    }
+
+    .section-dark {
+      background: var(--dark-navy);
+      color: var(--white);
+    }
+
+    .section-objective {
+      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+      position: relative;
+    }
+
+    .section-objective::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 L90 90 L10 90 Z" fill="rgba(200,200,200,0.2)"/></svg>');
+      background-size: 300px;
+      opacity: 0.3;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .benefits-list {
+      list-style: none;
+      max-width: 900px;
+    }
+
+    .benefits-list li {
+      padding: 15px 0 15px 40px;
+      position: relative;
+      font-size: 1.05rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .benefits-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: 2rem;
+      font-weight: 700;
+      top: 5px;
+    }
+
+    .objective-text {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Content Blocks */
+    .content-block {
+      margin-bottom: 50px;
+    }
+
+    .content-block h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--white);
+      border-left: 4px solid var(--red);
+      padding-left: 15px;
+    }
+
+    .content-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .content-block ul li {
+      padding: 12px 0 12px 30px;
+      position: relative;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .content-block ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: 1.5rem;
+    }
+
+    /* Modality Section */
+    .modality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      margin-top: 50px;
+    }
+
+    .modality-card {
+      text-align: center;
+    }
+
+    .modality-number {
+      font-size: 8rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin: 20px 0;
+    }
+
+    .modality-label {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .modality-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modality-duration {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      border-left: 3px solid var(--navy);
+    }
+
+    .modality-benefits {
+      list-style: none;
+    }
+
+    .modality-benefits li {
+      padding: 10px 0 10px 30px;
+      position: relative;
+    }
+
+    .modality-benefits li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: 1.5rem;
+    }
+
+    /* Pricing Section */
+    .section-pricing {
+      background: var(--white);
+    }
+
+    .pricing-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .pricing-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .pricing-amount {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--red);
+      margin-bottom: 30px;
+      line-height: 1;
+    }
+
+    .pricing-amount span {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .pricing-includes h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .pricing-includes ul {
+      list-style: none;
+    }
+
+    .pricing-includes ul li {
+      padding: 12px 0 12px 30px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .pricing-includes ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: 1.5rem;
+    }
+
+    .payment-info {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid var(--light-gray);
+    }
+
+    .payment-info h4 {
+      font-size: 1.2rem;
+      margin: 20px 0 10px;
+      font-weight: 700;
+    }
+
+    .account-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .payment-instruction {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .pricing-qr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-placeholder {
+      text-align: center;
+    }
+
+    .qr-box {
+      width: 250px;
+      height: 250px;
+      background: repeating-linear-gradient(
+        0deg,
+        #000 0px,
+        #000 10px,
+        #fff 10px,
+        #fff 20px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        #000 0px,
+        #000 10px,
+        #fff 10px,
+        #fff 20px
+      );
+      background-blend-mode: multiply;
+      border: 4px solid var(--navy);
+      margin-bottom: 15px;
+    }
+
+    .qr-placeholder p {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .contact-card {
+      text-align: center;
+    }
+
+    .qr-placeholder-small {
+      width: 150px;
+      height: 150px;
+      background: repeating-linear-gradient(
+        0deg,
+        #fff 0px,
+        #fff 8px,
+        #333 8px,
+        #333 16px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        #fff 0px,
+        #fff 8px,
+        #333 8px,
+        #333 16px
+      );
+      background-blend-mode: multiply;
+      border: 3px solid var(--white);
+      margin: 0 auto 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p:first-child {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .footer-name {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-instructor {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .instructor-photo {
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+      }
+
+      .hero-contact {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .pricing-content {
+        grid-template-columns: 1fr;
+      }
+
+      .modality-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 50px 20px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content > * {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .hero-content > *:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .hero-content > *:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .hero-content > *:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 35px;
+      height: 35px;
+      fill: white;
+    }
+
+    .whatsapp-pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      50% {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+      }
+      100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">TRAINING PRO</div>
+      <h1 class="hero-title">
+        <span class="title-main">IMPLANT</span>
+        <span class="title-main">RESTORATION</span>
+      </h1>
+      <p class="hero-version">VERSION II</p>
+
+      <div class="hero-subtitle">
+        <h2>Entrenamiento en <span class="text-red">rehabilitación</span> sobre <span class="text-red">implantes</span></h2>
+        <p class="hero-description">Domina la planeación y ejecución de tratamientos Implantosoportados de manera predecible y exitosa.</p>
+      </div>
+
+      <div class="hero-instructor">
+        <img src="https://i.ibb.co/52yKQNT/doctor-jcv.jpg" alt="Dr. Juan Carlos Vivas" class="instructor-photo">
+        <div class="instructor-info">
+          <h3>Dr. Juan Carlos Vivas</h3>
+          <p class="instructor-role">Rehabilitador Oral</p>
+          <p class="instructor-bio">
+            Docente posgrado de Rehabilitación Oral,<br>
+            Diplomados de Odontología Estética, Cirugía<br>
+            y Rehabilitación sobre Implantes.<br>
+            Conferencista Nacional e Internacional.
+          </p>
+        </div>
+        <div class="hero-date">
+          <p>Abril 2026</p>
+        </div>
+      </div>
+
+      <div class="hero-contact">
+        <div class="contact-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon">
+          <span>@drjuancvivas</span>
+        </div>
+        <div class="contact-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="social-icon">
+          <span>310 704 49 79</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience Section -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">¿A quién está dirigido este curso?</h2>
+      <p class="section-intro">A odontólogos generales y especialistas que deseen:</p>
+      <ul class="benefits-list">
+        <li>Conocer conceptos básicos y de alta complejidad en la implantología moderna.</li>
+        <li>Aumentar la predictibilidad de sus casos.</li>
+        <li>Comprender los principios protésicos y biomecánicos en implantología.</li>
+        <li>Conocer y aprender a manejar fallas comunes en rehabilitaciones sobre implantes.</li>
+        <li>Elevar su práctica clínica a un nivel profesional más alto.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Objective Section -->
+  <section class="section section-objective">
+    <div class="container">
+      <h2 class="section-title">Objetivo del curso</h2>
+      <p class="objective-text">
+        Capacitar odontólogos y especialistas para que puedan diagnosticar, planear, ejecutar y realizar rehabilitaciones sobre implantes con un enfoque clínico, práctico y basado en evidencia científica.
+      </p>
+    </div>
+  </section>
+
+  <!-- Course Content Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Contenido del <span class="text-red">curso</span></h2>
+
+      <div class="content-block">
+        <h3>1. FUNDAMENTOS DIAGNÓSTICOS</h3>
+        <ul>
+          <li>Interpretación tomografía y Planeación digital básica.</li>
+          <li>Tipos de implantes y conexiones (Externa, interna y cónica).</li>
+          <li>Temporalización sobre implantes.</li>
+          <li>Selección del componente protésico ideal para la temporalización y rehabilitación final.</li>
+          <li>Parámetros biológicos y estéticos para una rehabilitación sobre implantes exitosa.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>2. FUNDAMENTOS PROTÉSICOS</h3>
+        <ul>
+          <li>Elección de pilares: rectos, angulados, transepiteliales.</li>
+          <li>Decisiones cementado vs. atornillado.</li>
+          <li>Espacios protésicos y emergencia ideal.</li>
+          <li>Manejo de tejidos blandos previos a la rehabilitación.</li>
+          <li>Toma de impresiones flujo análogico y digital.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>3. REHABILITACIÓN UNITARIA</h3>
+        <ul>
+          <li>Corona unitaria sobre implante paso a paso.</li>
+          <li>Torque, asentamiento y verificación.</li>
+          <li>Manejo de complicaciones frecuentes.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>4. REHABILITACIÓN MÚLTIPLE</h3>
+        <ul>
+          <li>Prótesis múltiples implantosoportados.</li>
+          <li>Ajuste pasivo: técnicas y comprobaciones</li>
+          <li>Full arch: protocolos en carga inmediata y diferida</li>
+          <li>Tipos de barras, híbridas y provisionales.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>5. COMPLICACIONES Y SOLUCIONES</h3>
+        <ul>
+          <li>Aflojamiento y fractura de tornillos.</li>
+          <li>Fracturas cerámicas y de pilares.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modality Section -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Modalidad del curso</h2>
+
+      <div class="modality-grid">
+        <div class="modality-card">
+          <p>Es un curso teórico y preclínico, dirigido <strong>exclusivamente a</strong></p>
+          <div class="modality-number">10</div>
+          <p class="modality-label">Personas</p>
+          <p>con el objetivo tener mayor interacción con los asistentes.</p>
+        </div>
+
+        <div class="modality-info">
+          <p class="modality-duration"><strong>La duración es un día y medio</strong>, donde tendrás la posibilidad de trabajar sobre modelos con el objetivo de afianzar los conocimientos brindados durante la teoría.</p>
+          <ul class="modality-benefits">
+            <li>Recibirás una memoria con los tópicos teóricos más importantes.</li>
+            <li>Experimentarás casos reales explicados en detalle fotográficamente.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section section-pricing">
+    <div class="container">
+      <h2 class="section-title">Inscripción</h2>
+
+      <div class="pricing-content">
+        <div class="pricing-info">
+          <p class="pricing-label">VALOR</p>
+          <p class="pricing-amount">$2.200.000 <span>COP</span></p>
+
+          <div class="pricing-includes">
+            <h3>Incluye:</h3>
+            <ul>
+              <li>Modelo 3D impreso con aditamentos para realizar práctica preclínica durante el curso y que podrás llevar y usar en tu consultorio como una herramienta instructiva en la explicación de planes de tratamiento al paciente.</li>
+              <li>Destornillador para implantes</li>
+              <li>Siliconas, acrílicos, resinas y pulidores para uso durante el curso.</li>
+              <li>Acceso a Drive con información presentada durante el curso y actualizaciones constantes de artículos científicos seleccionados minuciosamente útiles en la práctica clínica implantológica.</li>
+            </ul>
+          </div>
+
+          <div class="payment-info">
+            <p>El participante debe llevar computador y se le enviará un enlace para que descargue el programa para realizar análisis de tomografía y planeacion.</p>
+
+            <h4>Cuenta de ahorros Bancolombia</h4>
+            <p class="account-number">912-322900-35</p>
+
+            <p class="payment-instruction">Enviar comprobante de pago al correo <strong>juancarlosvivas88@hotmail.com</strong> con los datos personales: nombre completo, cédula, ciudad, correo electrónico y celular de contacto.</p>
+          </div>
+        </div>
+
+        <div class="pricing-qr">
+          <div class="qr-placeholder">
+            <div class="qr-box"></div>
+            <p>IMPLANT RESTORATION TRAINING PRO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Info Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Información <span class="text-red">adicional</span></h2>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="qr-placeholder-small"></div>
+          <div class="contact-detail">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon">
+            <span>@drjuancvivas</span>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="qr-placeholder-small"></div>
+          <div class="contact-detail">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="social-icon">
+            <span>310 704 49 79</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <p>JCV</p>
+        <p class="footer-name">Juan Carlos Vivas</p>
+      </div>
+      <p class="footer-text">© 2026 Dr. Juan Carlos Vivas - Rehabilitador Oral</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/573107044979?text=Hola%2C%20estoy%20interesado%2Fa%20en%20la%20capacitaci%C3%B3n%20Implant%20Restoration"
+     class="whatsapp-float whatsapp-pulse"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.048-13.483 13.483-13.483s13.483 6.048 13.483 13.483c0 7.435-6.048 13.483-13.483 13.483zM21.305 18.145c-0.345-0.173-2.040-1.007-2.356-1.122-0.316-0.115-0.547-0.173-0.776 0.173s-0.892 1.122-1.094 1.352c-0.201 0.23-0.403 0.259-0.748 0.086s-1.46-0.538-2.779-1.716c-1.027-0.917-1.721-2.049-1.923-2.394s-0.022-0.533 0.152-0.705c0.155-0.155 0.345-0.403 0.518-0.604s0.23-0.345 0.345-0.575c0.115-0.23 0.058-0.431-0.029-0.604s-0.776-1.87-1.063-2.565c-0.28-0.672-0.561-0.58-0.776-0.591-0.201-0.010-0.431-0.012-0.662-0.012s-0.604 0.086-0.92 0.431c-0.316 0.345-1.206 1.179-1.206 2.873s1.235 3.333 1.408 3.563c0.173 0.23 2.385 3.733 5.857 5.158 0.817 0.335 1.453 0.535 1.949 0.686 0.817 0.259 1.561 0.222 2.149 0.135 0.655-0.098 2.040-0.833 2.327-1.638s0.287-1.495 0.201-1.638c-0.086-0.143-0.316-0.23-0.662-0.403z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Implant Restoration Landing Page loaded');
+
+      // Add smooth scrolling to all links
+      const anchors = document.querySelectorAll('a[href^="#"]');
+      for (const anchor of anchors) {
+        anchor.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = anchor.getAttribute('href');
+          if (href) {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
